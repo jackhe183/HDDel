@@ -1,0 +1,25 @@
+一、图片转url：https://devops-test.hjysmart.com/static-resources
+用户名：root
+密码：root123456
+
+二、网页版客户端：https://www.sojson.com/http/test.html
+对账单url：ocr26-daily.hjysmart.com/reciept/ai/parse/bankStatement
+承兑汇票url：ocr26-daily.hjysmart.com/reciept/ai/parse/bankAcceptanceBill
+请求体：
+{
+    "entId": 1948305914895273984,
+    "recieptUrl": "https://img.hjysmart.com/system/upload/devops-server/20250731/af98655e01044b55ac851a7b68ab1801.jpg",
+    "recieptType": "BANK_DZD",
+    "bankReceiptSource": "FROM_WEB"
+}
+说明：
+entId：默认不变
+recieptUrl：图片pdf，用转换工具转换一下
+bankReceiptSource：默认不变
+recieptType："BANK_DZD"、对账单；BANK_CDHP、承兑汇票；BANK_HD、回单
+
+--压缩再测一下，精度低的textin要重新测试
+--写文档标注数据集的流程，尽可能简单
+测试公司内部产品
+对账单测评下一阶段
+这个是针对回单切割人物的，只标注回单，标注这几类：logo【银行logo】，title【表格标题（示例：交税回单）】、table【表格】、seal【印章】、header【表前面的文字】、footer【表后面的文字】

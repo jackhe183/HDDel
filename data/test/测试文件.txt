@@ -1,0 +1,6 @@
+{
+  "source_path": "C:/Users/EDY/Desktop/mainProject/ShenYuanHDDel/data/拆点功能1017/新建文件夹",
+  "destination_path": "C:/Users/EDY/Desktop/mainProject/ShenYuanHDDel/data/test"
+}
+
+
