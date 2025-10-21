@@ -53,4 +53,13 @@ python main.py
 
 
 
-
+# from 最大裂谷算法 import find_slip_starts
+# from 簇过滤算法 import find_slip_starts
+# from .均衡分割算法 import find_slip_starts   # 全对了  # 2的联数强制为2全部正确，设置联数=0全错
+# from .自适应分割算法 import find_slip_starts  # 全对了  # 2的联数强制为2全部正确，设置联数=0全错
+# from .聚类拟合算法 import find_slip_starts  # 全对了  # 2的联数强制为2全部正确，设置联数=0全错
+# from 高级分割算法 import find_slip_starts # 全错了
+# from 智能决策算法 import find_slip_starts # 自动大部分错，强制联数=2全部正确
+# from 稳健间距算法 import find_slip_starts # 自动大部分错，强制联数=2全部正确
+# from 奥卡姆剃刀算法 import find_slip_starts # 自动大部分错，强制联数=2全部正确
+from .结构匹配算法 import find_slip_starts  # 全对了  # 2的联数强制为2全部正确，设置联数=0全错
