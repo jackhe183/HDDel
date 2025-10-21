@@ -1,0 +1,198 @@
+{
+  "name": "算法筛除多余线",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -688,
+        -64
+      ],
+      "id": "ad881418-7dd2-4275-ae83-59089fbc7825",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('项目根路径配置').item.json.request_base_path }}/get_images_lines_info",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "source_path",
+              "value": "={{ $json.image_source_path }}"
+            },
+            {
+              "name": "destination_path",
+              "value": "={{ $json.test_path }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -144,
+        -64
+      ],
+      "id": "587be161-1556-402f-b241-412c6c4e4191",
+      "name": "获取图片的线信息"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('项目根路径配置').item.json.request_base_path }}/process_and_compare",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "source_path",
+              "value": "={{ $('Edit Fields').item.json.test_path }}/image_info.json"
+            },
+            {
+              "name": "destination_path",
+              "value": "={{ $('Edit Fields').item.json.test_path }}"
+            },
+            {
+              "name": "gt_path",
+              "value": "={{ $('Edit Fields').item.json.test_path }}/image_GT.json"
+            },
+            {
+              "name": "expected_slips",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        80,
+        -64
+      ],
+      "id": "46cfea55-2a68-4649-ae3b-a59c1ceb6c27",
+      "name": "调用算法筛除多余线"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "308fbe37-5030-4c0c-95de-d7536468ea15",
+              "name": "image_source_path",
+              "value": "={{ $json.data_base_path }}/拆点功能1017/新建文件夹",
+              "type": "string"
+            },
+            {
+              "id": "3778d077-f4a1-4c4b-9680-60da1526161d",
+              "name": "test_path",
+              "value": "={{ $json.data_base_path }}/test",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -320,
+        -64
+      ],
+      "id": "14da78e8-5a8e-4fd1-8466-588428585ee5",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "95b1241e-bdd1-408e-a50b-4f406311aa1c",
+              "name": "data_base_path",
+              "value": "C:/Users/EDY/Desktop/mainProject/ShenYuanHDDel/data",
+              "type": "string"
+            },
+            {
+              "id": "65b324b0-76cd-475b-9936-43627bed2b99",
+              "name": "request_base_path",
+              "value": "http://host.docker.internal:8005/HDLineDel",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -496,
+        -64
+      ],
+      "id": "ec12e8e6-d967-4cdd-8320-73a39352d015",
+      "name": "项目根路径配置",
+      "alwaysOutputData": false
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "项目根路径配置",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "获取图片的线信息": {
+      "main": [
+        [
+          {
+            "node": "调用算法筛除多余线",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "获取图片的线信息",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "项目根路径配置": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3c4bb45b-e313-42f9-ba30-90b11b719b6d",
+  "meta": {
+    "instanceId": "6282e276afc61a28e81fc3c1d27744e5493e49a1511ed2ae6174e3c55e7a4dc1"
+  },
+  "id": "QrQvVMzBjNhEi54p",
+  "tags": []
+}
