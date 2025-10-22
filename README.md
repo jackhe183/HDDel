@@ -49,7 +49,7 @@ python -m HDDel.main
 ### 使用n8n工作流
 
 **localhost:5678** 打开网页进入n8n，将文件“算法筛除多余线.json”拖入workflow工作面板，点击“Execute workflow”按钮即可开始
-
+<img src="assets.Snipaste_2025-10-22_09-37-56.png">
 
 
 
