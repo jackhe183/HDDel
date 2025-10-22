@@ -4,7 +4,7 @@
 
 ## 环境准备：
 
-### Docker Windows本地部署n8n，参考n8n官方项目（https://github.com/n8n-io/n8n）
+### n8n Docker Windows本地部署，参考n8n官方项目（https://github.com/n8n-io/n8n）
 
 第一次安装桌面版docker，如果要提示安装WSL，powershell管理员运行以下代码。
 ```bash
@@ -42,11 +42,13 @@ uv pip install -r requirements.txt
 
 启动FastAPI项目。如果端口被占用了，可以在main.py里面将8005改为其它的端口。
 ```bash
-python main.py
+cd ..
+python -m HDDel.main
 ```
 
 ### 使用n8n工作流
 
+**localhost:5678** 打开网页进入n8n，将文件“算法筛除多余线.json”拖入workflow工作面板，点击“Execute workflow”按钮即可开始
 
 
 
