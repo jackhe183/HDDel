@@ -51,16 +51,16 @@ python -m HDDel.main
 **localhost:5678** 打开网页进入n8n，将文件“算法筛除多余线.json”拖入workflow工作面板，点击“Execute workflow”按钮即可开始
 ![n8n工作流界面](https://github.com/jackhe183/HDDel/blob/main/assets/Snipaste_2025-10-22_09-37-56.png?raw=true)
 
-### 以下是工作流调用算法测试的结果，我为了方便直接在调用算法main.py修改使用的算法py脚本了
+### 以下是工作流调用算法测试的结果，我为了方便直接在调用算法main.py修改使用的算法py脚本了<br>
 <textArea>
-# from 最大裂谷算法 import find_slip_starts
-# from 簇过滤算法 import find_slip_starts
-# from .均衡分割算法 import find_slip_starts   # 全对了  # 2的联数强制为2全部正确，设置联数=0全错
-# from .自适应分割算法 import find_slip_starts  # 全对了  # 2的联数强制为2全部正确，设置联数=0全错
-# from .聚类拟合算法 import find_slip_starts  # 全对了  # 2的联数强制为2全部正确，设置联数=0全错
-# from 高级分割算法 import find_slip_starts # 全错了
-# from 智能决策算法 import find_slip_starts # 自动大部分错，强制联数=2全部正确
-# from 稳健间距算法 import find_slip_starts # 自动大部分错，强制联数=2全部正确
-# from 奥卡姆剃刀算法 import find_slip_starts # 自动大部分错，强制联数=2全部正确
-from .结构匹配算法 import find_slip_starts  # 全对了  # 2的联数强制为2全部正确，设置联数=0全错
+# from 最大裂谷算法 import find_slip_starts<br>
+# from 簇过滤算法 import find_slip_starts<br>
+# from .均衡分割算法 import find_slip_starts   # 新建文件夹 全对了  # 新建文件夹2的联数强制为2全部正确，设置联数=0全错<br>
+# from .自适应分割算法 import find_slip_starts  # 新建文件夹 全对了  # 新建文件夹2的联数强制为2全部正确，设置联数=0全错<br>
+# from .聚类拟合算法 import find_slip_starts  # 新建文件夹 全对了  # 新建文件夹2的联数强制为2全部正确，设置联数=0全错<br>
+# from 高级分割算法 import find_slip_starts # 新建文件夹 全错了<br>
+# from 智能决策算法 import find_slip_starts # 新建文件夹 自动大部分错，强制联数=2全部正确<br>
+# from 稳健间距算法 import find_slip_starts # 新建文件夹 自动大部分错，强制联数=2全部正确<br>
+# from 奥卡姆剃刀算法 import find_slip_starts # 新建文件夹 自动大部分错，强制联数=2全部正确<br>
+from .结构匹配算法 import find_slip_starts  # 新建文件夹 全对了  # 新建文件夹2的联数强制为2全部正确，设置联数=0全错<br>
 </textArea>
