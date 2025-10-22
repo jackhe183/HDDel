@@ -49,11 +49,10 @@ python -m HDDel.main
 ### 使用n8n工作流
 
 **localhost:5678** 打开网页进入n8n，将文件“算法筛除多余线.json”拖入workflow工作面板，点击“Execute workflow”按钮即可开始
-![n8n工作流界面图](assets.Snipaste_2025-10-22_09-37-56.png)
+![n8n工作流界面](https://github.com/jackhe183/HDDel/blob/main/assets/Snipaste_2025-10-22_09-37-56.png?raw=true)
 
-
-
-
+### 以下是工作流调用算法测试的结果，我为了方便直接在调用算法main.py修改使用的算法py脚本了
+<textArea>
 # from 最大裂谷算法 import find_slip_starts
 # from 簇过滤算法 import find_slip_starts
 # from .均衡分割算法 import find_slip_starts   # 全对了  # 2的联数强制为2全部正确，设置联数=0全错
@@ -64,3 +63,4 @@ python -m HDDel.main
 # from 稳健间距算法 import find_slip_starts # 自动大部分错，强制联数=2全部正确
 # from 奥卡姆剃刀算法 import find_slip_starts # 自动大部分错，强制联数=2全部正确
 from .结构匹配算法 import find_slip_starts  # 全对了  # 2的联数强制为2全部正确，设置联数=0全错
+</textArea>
